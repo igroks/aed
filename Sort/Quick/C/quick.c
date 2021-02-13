@@ -11,7 +11,7 @@ void quickInterno(int vet[], int inicio, int fim){
 
         do{
             while(vet[i] < pivot)i++;
-            while(vet[j] < pivot)j--;
+            while(vet[j] > pivot)j--;
 
             if(i <= j){
                 temp = vet[i];
@@ -20,7 +20,7 @@ void quickInterno(int vet[], int inicio, int fim){
                 i++;
                 j--;
             }
-        }whie(i <= j);
+        }while(i <= j);
 
         quickInterno(vet,inicio, j);
         quickInterno(vet, i, fim);
@@ -29,4 +29,20 @@ void quickInterno(int vet[], int inicio, int fim){
 
 void quickSort(int vet[], int tam){
     quickInterno(vet, 0, tam-1);
+}
+
+void main(){
+    
+    //Exemplo
+    int i, tam = 9;
+    int vet[] = {3,5,1,6,7,2,8,9,4};
+
+    quickSort(vet,tam);
+
+    //Imprimindo vetor
+    for(i = 0; i < tam; i++){
+        printf("%d ", vet[i]);
+    }
+    printf("\n");
+    
 }

@@ -41,7 +41,7 @@ void mergeInterno(int vet[], int aux[], int inicio, int fim){
     if(inicio < fim){
         meio = (inicio + fim)/2;
         mergeInterno(vet, aux, inicio, meio);
-        mergeInterno(vet, aux, meio-1, fim);
+        mergeInterno(vet, aux, meio+1, fim);
         intercala(vet, aux, inicio, fim, meio);
     }
 }
@@ -50,4 +50,21 @@ void mergeSort(int vet[], int tam){
     int *aux = (int*)malloc(sizeof(int)*tam);
     mergeInterno(vet, aux, 0, tam-1);
     free(aux);
+}
+
+void main(){
+
+    //Exemplo
+    int i, tam = 9;
+    int vet[] = {5,3,4,8,7,1,9,2,6};
+
+    mergeSort(vet,tam);
+
+    //Imprimindo o vetor
+    for(i = 0; i < tam; i++){
+        printf("%d ", vet[i]);
+    }
+    printf("\n");
+
+
 }

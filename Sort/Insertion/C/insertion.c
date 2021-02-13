@@ -4,7 +4,7 @@ void insertionSort(int vet[], int tam){
     
     int pivot,i,j;
 
-    for(j = 0; j < tam; j++){
+    for(j = 1; j < tam; j++){
 
         pivot = vet[j];
         i = j-1;
@@ -16,4 +16,19 @@ void insertionSort(int vet[], int tam){
         }
         vet[i+1] = pivot;
     }
+}
+
+void main(){
+
+    //Exemplo
+    int i, tam = 9;
+    int vet[] = {5,3,2,6,7,1,4,8,9};
+
+    insertionSort(vet,tam);
+
+    //Imprimindo vetor
+    for(i = 0; i < tam; i++){
+        printf("%d ", vet[i]);
+    }
+    printf("\n");
 }

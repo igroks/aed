@@ -16,3 +16,18 @@ void selectionSort(int vet[], int tam){
         vet[posMenor] = temp;
     }
 }
+
+void main(){
+
+    //Exemplo
+    int i,tam = 9;
+    int vet[] = {4,6,5,3,8,7,9,2,1};
+    
+    selectionSort(vet, tam);
+
+    //Imprimindo o vetor
+    for(i = 0; i < tam; i++){
+        printf("%d ", vet[i]);
+    }
+    printf("\n");
+}
