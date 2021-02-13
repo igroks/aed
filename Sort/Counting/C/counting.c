@@ -1,17 +1,22 @@
 #include <stdio.h>
 
-#define MAX 100
+#define MAX 100 //Tamanho máximo do vetor auxliar que irá armazenar a contagem
 
-void coutingSort(int vet[], int tam){
+void countingSort(int vet[], int tam){
 
     int i, j, k, aux[MAX];
 
+    //incializando vetor auxiliar
     for(i = 0; i < MAX; i++){
         aux[i] = 0;
     }
+
+    //Contando
     for(i = 0; i < tam; i++){
         aux[vet[i]]++;
     }
+
+    //Reatribuindo intens ao vetor original de forma ordenada
     for(i = 0, j = 0; j < MAX; j++){
         for(k = aux[j]; k > 0; k--){
             vet[i++] = j;
