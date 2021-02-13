@@ -23,3 +23,19 @@ void countingSort(int vet[], int tam){
         }
     }
 }
+
+void main(){
+
+    //Exemplo
+    int i, tam = 9;
+    int vet[] = {5,7,3,6,9,1,8,2,4};
+
+    countingSort(vet,tam);
+
+    //Imprimindo o vetor
+    for(i = 0; i < tam; i++){
+        printf("%d ", vet[i]);
+    }
+    printf("\n");
+
+}

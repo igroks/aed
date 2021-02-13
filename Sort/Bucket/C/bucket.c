@@ -12,7 +12,7 @@ void insertionSort(int vet[], int tam){
     
     int pivot,i,j;
 
-    for(i = 0; j < tam; j++){
+    for(j = 0; j < tam; j++){
 
         pivot = vet[j];
         i = j-1;
@@ -39,7 +39,7 @@ void bucketSort(int vet[], int tam){
         if(vet[i] < menor)menor = vet[i];
 
     }
-
+    
     //Iniciliza baldes
     numBaldes = (maior-menor)/TAM+1;
     bd = (tipoBalde*)malloc(numBaldes*sizeof(tipoBalde));
@@ -65,4 +65,19 @@ void bucketSort(int vet[], int tam){
         }
     }
     free(bd);
+}
+
+void main(){
+
+    //Exemplo
+    int i, tam = 9;
+    int vet[] ={5,1,7,3,9,4,6,2,8};
+
+    bucketSort(vet,tam);
+
+    //Imprimindo o vetor
+    for(i = 0; i < tam; i++){
+        printf("%d ", vet[i]);
+    }
+    printf("\n");
 }
