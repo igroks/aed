@@ -68,6 +68,7 @@ void busca_largura_grafo(grafo_t *grafo, int inicio, int *visitado){
                 fila[final_fila] = vizinho->rotulo;
                 visitado[vizinho->rotulo] = 1;
             }
+            vizinho = vizinho->prox;
         }
     }
     free(fila);
