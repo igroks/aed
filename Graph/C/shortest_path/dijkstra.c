@@ -103,7 +103,7 @@ int addVertex(heap_t *heap, int vertexKey){
     if (heap->occupation == heap->capacity)
         return 0;
     
-     heap->priority[vertexKey] = INFINITE;
+    heap->priority[vertexKey] = INFINITE;
     heap->queue[heap->occupation] = vertexKey;
     heapifyUp(heap, heap->occupation);
     heap->occupation++;
